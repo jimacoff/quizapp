@@ -8,6 +8,24 @@
 </head>
 <body>
 
+<% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+        <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+<% end %>
+
+<% if user_signed_in? %>
+    <li>
+      <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
+      <%= current_user.email %>
+    </li>
+<% else %>
+    <li>
+      <%= link_to "Login with Google", user_omniauth_authorize_path(:google_oauth2) %> |
+      <%= link_to('Login', new_user_session_path)  %> | <%= link_to('Sign up', new_user_registration_path)  %>
+    </li>
+<% end %>
+
 <%= yield %>
 
 </body>
