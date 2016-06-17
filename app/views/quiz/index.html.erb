@@ -1,0 +1,12 @@
+<p> Choose the correct option below</p>
+
+<%= form_tag score_path, method: "post", remote: true do %>
+    <% @questions.each_with_index do |question, index| %>
+        <p> <%= question.name %> </p>
+        <%= hidden_field "question[#{index}]", :id , value: question.id %>
+        <% question.fetch_options.each do |option| %>
+            <%= radio_button_tag "question[#{index}][options]" , option %> <%= option %><br/>
+        <% end %>
+    <% end %>
+    <%= submit_tag "Submit", name: 'option' %>
+<% end %>
