@@ -23,6 +23,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 
+gem 'pry'
+
+gem 'kaminari'
+
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 

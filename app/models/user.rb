@@ -3,17 +3,17 @@ class User
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
+  # :confirmable, :lockable, :timeoutable
 
-  # validates_uniqueness_of :email, :case_sensitive => false
+  validates_uniqueness_of :email, case_sensitive: false
   validates_presence_of :email
 
   ## Database authenticatable
-  field :provider, :type => String
-  field :uid, :type => String
-  field :score, :type => Integer, default: 0
-  field :email, :type => String, :default => ""
-  field :encrypted_password, :type => String, :default => ""
+  field :provider, type: String
+  field :uid, type: String
+  field :score, type: Integer, default: 0
+  field :email, type: String, default: ""
+  field :encrypted_password, type: String, default: ""
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -30,24 +30,14 @@ class User
   field :last_sign_in_ip,    type: String
 
   def self.create_with_omniauth(auth)
-    create! do |user|
-      user.provider = auth['provider']
-      user.uid = auth['uid']
-      if auth['info']
-        user.email = auth['info']['email'] || ""
-        user.password = ""
+      create! do |user|
+        user.provider = auth['provider']
+        user.uid = auth['uid']
+        if auth['info']
+          user.email = auth['info']['email'] || ""
+          user.password = ""
+        end
       end
-    end
   end
 
-  ## Confirmable
-  # field :confirmation_token,   type: String
-  # field :confirmed_at,         type: Time
-  # field :confirmation_sent_at, type: Time
-  # field :unconfirmed_email,    type: String # Only if using reconfirmable
-
-  ## Lockable
-  # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
-  # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
-  # field :locked_at,       type: Time
 end

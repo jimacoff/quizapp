@@ -16,8 +16,10 @@
 
 <% if user_signed_in? %>
     <li>
+      <%= link_to('Take Test', test_path) %>
       <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>
       <%= current_user.email %>
+      <p><%= current_user.score %></p>
     </li>
 <% else %>
     <li>
