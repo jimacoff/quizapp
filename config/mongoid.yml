@@ -144,7 +144,7 @@ test:
 production:
   clients:
     default:
-      uri: <%= ENV['MONGOHQ_URL'] %>
+      uri: <%= ENV['MONGODB_URI'] %>
       options:
         consistency: :strong
         max_retries: 1
