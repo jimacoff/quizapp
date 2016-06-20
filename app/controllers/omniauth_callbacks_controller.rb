@@ -5,7 +5,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     user = User.where(:provider => auth['provider'],
                       :uid => auth['uid']).first || User.create_with_omniauth(auth)
     sign_in user, :event => :authentication
-    redirect_to root_path, :notice => "Signed in!"
+    redirect_to root_path, :notice => "You have successfully signed in!"
   end
 
 end
