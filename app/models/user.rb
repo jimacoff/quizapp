@@ -14,6 +14,7 @@ class User
   field :score, type: Integer, default: 0
   field :email, type: String, default: ""
   field :encrypted_password, type: String, default: ""
+  field :admin, type: Boolean, default: false
 
   ## Recoverable
   field :reset_password_token,   type: String
