@@ -1,5 +1,5 @@
 <p> Choose the correct option below</p>
-<div class="questions_tab">
+<div id="questions_tab">
     <%= form_tag test_path, method: "post", remote: true do %>
         <% @questions.each_with_index do |question, index| %>
             <p> <%= question.name %> </p>

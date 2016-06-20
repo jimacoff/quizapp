@@ -26,8 +26,6 @@ gem 'devise'
 
 gem 'pry'
 
-gem 'kaminari'
-
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 

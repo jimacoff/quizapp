@@ -1,1 +1,23 @@
-<p>bla bla</p>
+
+
+<div class="well users-table">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>#</th>
+      <th>Email</th>
+      <th>Score</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td><%= user._id %></td>
+      <td><%= user.email %></td>
+      <td><%= user.score %></td>
+    </tr>
+    <% end %>
+    </tbody>
+  </table>
+</div>
+
