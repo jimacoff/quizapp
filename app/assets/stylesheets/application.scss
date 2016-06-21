@@ -36,13 +36,21 @@ div#flash_notice {
   margin-bottom: 2%;
 }
 
-.custom-devise {
-  width: 30%;
-  margin-left: 35%;
+.container.custom-devise {
   margin-top: 10%;
   text-align: center;
 }
 
 .intro-text {
   margin-top: 20%;
+}
+
+.input-group {
+  width: 70%;
+  align: center;
+  margin: 0 auto;
+}
+
+div#questions_tab {
+  margin-left: 35%;
 }

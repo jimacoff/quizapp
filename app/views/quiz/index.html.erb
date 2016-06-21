@@ -1,13 +1,17 @@
-<p> Choose the correct option below</p>
-<div id="questions_tab">
-    <%= form_tag test_path, method: "post", remote: true do %>
-        <% @questions.each_with_index do |question, index| %>
-            <p> <%= question.name %> </p>
-            <%= hidden_field "question[#{index}]", :id , value: question.id %>
-            <% question.fetch_options.each do |option| %>
-                <%= radio_button_tag "question[#{index}][options]" , option %> <%= option %><br/>
+<div class="quiz-view jumbotron">
+  <br>
+  <br>
+  <h3 style="text-align: center"> Choose the correct option below</h3>
+  <div id="questions_tab">
+        <%= form_tag test_path, method: "post" do %>
+            <% @questions.each_with_index do |question, index| %>
+                <p id="question"> <%= question.name %> </p>
+                <%= hidden_field "question[#{index}]", :id , value: question.id %>
+                <% question.fetch_options.each do |option| %>
+                    <%= radio_button_tag "question[#{index}][options]" , option %> <%= option %><br/>
+                <% end %>
             <% end %>
+            <%= submit_tag "Submit", name: 'option', class: "btn btn-success btn-md" %>
         <% end %>
-        <%= submit_tag "Submit", name: 'option' %>
-    <% end %>
+    </div>
 </div>

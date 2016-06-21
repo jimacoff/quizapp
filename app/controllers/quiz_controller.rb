@@ -16,6 +16,7 @@ class QuizController < ApplicationController
       end
     end
     current_user.update_attribute(:score, @updated_score)
+    redirect_to root_path
   end
 
   private
