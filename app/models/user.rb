@@ -11,7 +11,7 @@ class User
   ## Database authenticatable
   field :provider, type: String
   field :uid, type: String
-  field :score, type: Integer, default: 0
+  field :score, type: Integer
   field :email, type: String, default: ""
   field :encrypted_password, type: String, default: ""
   field :admin, type: Boolean, default: false
