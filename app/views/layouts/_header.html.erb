@@ -1,19 +1,10 @@
 <header>
   <div class="container">
-
     <div class="intro-text">
       <% flash.each do |name, msg| %>
           <% if msg.is_a?(String) %>
               <%= content_tag :div, msg, :id => "flash_#{name}" %>
           <% end %>
-      <% end %>
-
-      <div class="intro-lead-in"> Technical Quiz App!</div>
-      <% if user_signed_in? %>
-          <%= link_to('Take Test', test_path, class: "page-scroll btn btn-xl btn-lg btn-success") %>
-            <button class="btn btn-primary btn-lg" type="button">
-              Current Score <span class="badge"><%= current_user.score %></span>
-            </button>
       <% end %>
     </div>
   </div>

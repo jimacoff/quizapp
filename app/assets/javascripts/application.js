@@ -15,3 +15,23 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+
+//var checkedRadios = 0;
+//$('#question_form').submit(function (e) {
+//    e.preventDefault();
+//    $(this).find('input[type=radio]').each(function () {
+//        if ($(this).prop('checked')) {
+//            checkedRadios++;
+//        }
+//    });
+//    if (checkedRadios < 15) {
+//        alert('No radio selected');
+//    }
+//});
+//
+//if($('input:radio:checked').length > 0) {
+//    alert('checked');
+//}else {
+//    alert('unchecked');
+//}
